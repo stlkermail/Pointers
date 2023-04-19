@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-
 #define delimetr "-------------------------------------------------------------"
 
 void Exchange(int a, int b);
