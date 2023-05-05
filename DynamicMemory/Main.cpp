@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 using std::cout;
 using std::cin;
@@ -13,11 +13,11 @@ void Print(int** arr, const int rows, const int cols);
 
 int* push_back(int* arr, int& n, int value);
 int* push_front(int* arr, int& n, int value);
-int* insert(int* arr, int& n, int value, int index);			//вставляет значение в массив по индексу
+int* insert(int* arr, int& n, int value, int index);			//РІСЃС‚Р°РІР»СЏРµС‚ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІ РїРѕ РёРЅРґРµРєСЃСѓ
 
 int* pop_back(int* arr, int& n);
 int* pop_front(int* arr, int& n);
-int* erase(int* arr, int& n, int value, int index);						//удаляем элемент по индексу
+int* erase(int* arr, int& n, int value, int index);						//СѓРґР°Р»СЏРµРј СЌР»РµРјРµРЅС‚ РїРѕ РёРЅРґРµРєСЃСѓ
 
 #define DYNAMIC_MEMORY_1
 //#define DYNAMIC_MEMORY_2
@@ -28,26 +28,26 @@ void main()
 	setlocale(LC_ALL, "");
 #ifdef DYNAMIC_MEMORY_1
 	int n;
-	cout << "Введите размер массива: "; cin >> n;
+	cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°: "; cin >> n;
 	int* arr = new int[n];
 	FillRand(arr, n);
 	Print(arr, n);
 
 	int value;
 	//int number;
-	cout << "Введите добавляемое значение: "; cin >> value;
+	cout << "Р’РІРµРґРёС‚Рµ РґРѕР±Р°РІР»СЏРµРјРѕРµ Р·РЅР°С‡РµРЅРёРµ: "; cin >> value;
 	arr = push_back(arr, n, value);
-	//cout << "Введите количество добавляемых значений: "; cin >> number;
+	//cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РґРѕР±Р°РІР»СЏРµРјС‹С… Р·РЅР°С‡РµРЅРёР№: "; cin >> number;
 	Print(arr, n);
 
-	cout << "Введите добавляемое значение: "; cin >> value;
+	cout << "Р’РІРµРґРёС‚Рµ РґРѕР±Р°РІР»СЏРµРјРѕРµ Р·РЅР°С‡РµРЅРёРµ: "; cin >> value;
 	arr = push_front(arr, n, value);
 	Print(arr, n);
 
 	int index;
 
-	cout << "Введите index добавляемого элемента: "; cin >> index;
-	cout << "Введите добавляемое значение: "; cin >> value;
+	cout << "Р’РІРµРґРёС‚Рµ index РґРѕР±Р°РІР»СЏРµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р°: "; cin >> index;
+	cout << "Р’РІРµРґРёС‚Рµ РґРѕР±Р°РІР»СЏРµРјРѕРµ Р·РЅР°С‡РµРЅРёРµ: "; cin >> value;
 	arr = insert(arr, n, value, index);
 	Print(arr, n);
 
@@ -57,7 +57,7 @@ void main()
 	arr = pop_front(arr, n);
 	Print(arr, n);
 
-	cout << "Введите индекс для удаления массива: "; cin >> index;
+	cout << "Р’РІРµРґРёС‚Рµ РёРЅРґРµРєСЃ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РјР°СЃСЃРёРІР°: "; cin >> index;
 
 	arr = erase(arr, n, value, index);
 	Print(arr, n);
@@ -68,8 +68,8 @@ void main()
 
 #ifdef DYNAMIC_MEMORY_2
 	int rows, cols;
-	cout << "Введите ко-во строк: "; cin >> rows;
-	cout << "Введите ко-во элементов строки: "; cin >> cols;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕ-РІРѕ СЃС‚СЂРѕРє: "; cin >> rows;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕ-РІРѕ СЌР»РµРјРµРЅС‚РѕРІ СЃС‚СЂРѕРєРё: "; cin >> cols;
 
 	int** arr = new int* [rows];
 	for (int i = 0; i < rows; i++)
@@ -80,12 +80,12 @@ void main()
 	FillRand(arr, rows, cols);
 	Print(arr, rows, cols);
 
-	//1) удаляем строки
+	//1) СѓРґР°Р»СЏРµРј СЃС‚СЂРѕРєРё
 	for (int i = 0; i < rows; i++)
 	{
 		delete[] arr[i];
 	}
-	//2) Удаляем массив указателей
+	//2) РЈРґР°Р»СЏРµРј РјР°СЃСЃРёРІ СѓРєР°Р·Р°С‚РµР»РµР№
 	delete[] arr;
 #endif // DYNAMIC_MEMORY_2
 }
@@ -130,36 +130,36 @@ void Print(int** arr, const int rows, const int cols)
 
 int* push_back(int* arr, int& n, int value)
 {
-	//создаем буферный массив нужного размера (на 1 элемент больше)
+	//СЃРѕР·РґР°РµРј Р±СѓС„РµСЂРЅС‹Р№ РјР°СЃСЃРёРІ РЅСѓР¶РЅРѕРіРѕ СЂР°Р·РјРµСЂР° (РЅР° 1 СЌР»РµРјРµРЅС‚ Р±РѕР»СЊС€Рµ)
 	int* buffer = new int[n + 1];
-	//копируем все значения из исходного массива в буферный:
+	//РєРѕРїРёСЂСѓРµРј РІСЃРµ Р·РЅР°С‡РµРЅРёСЏ РёР· РёСЃС…РѕРґРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІ Р±СѓС„РµСЂРЅС‹Р№:
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i] = arr[i];
 	}
-	//удаляем исходный массив:
+	//СѓРґР°Р»СЏРµРј РёСЃС…РѕРґРЅС‹Р№ РјР°СЃСЃРёРІ:
 	delete[] arr;
-	//подмняем адрес исходного массива адресом нового массива:
+	//РїРѕРґРјРЅСЏРµРј Р°РґСЂРµСЃ РёСЃС…РѕРґРЅРѕРіРѕ РјР°СЃСЃРёРІР° Р°РґСЂРµСЃРѕРј РЅРѕРІРѕРіРѕ РјР°СЃСЃРёРІР°:
 	arr = buffer;
-	buffer = nullptr;	//NULL-pointer (указатель на ноль)
+	buffer = nullptr;	//NULL-pointer (СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РЅРѕР»СЊ)
 	//cout << typeid(nullptr).name() << endl;
-	//И только после этого в массив "arr" можно добавить значение:
+	//Р С‚РѕР»СЊРєРѕ РїРѕСЃР»Рµ СЌС‚РѕРіРѕ РІ РјР°СЃСЃРёРІ "arr" РјРѕР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ:
 	arr[n] = value;
-	//после добавления элемента в массив ко-во его элементов увеличивается на 1:
+	//РїРѕСЃР»Рµ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РІ РјР°СЃСЃРёРІ РєРѕ-РІРѕ РµРіРѕ СЌР»РµРјРµРЅС‚РѕРІ СѓРІРµР»РёС‡РёРІР°РµС‚СЃСЏ РЅР° 1:
 	n++;
-	//Mission complete - элемент добавлен. 
+	//Mission complete - СЌР»РµРјРµРЅС‚ РґРѕР±Р°РІР»РµРЅ. 
 	return arr;
 }
 int* push_front(int* arr, int& n, int value)
 {
-	int* buffer = new int[n + 1];   //1) присвоить буффер new int n + 1, создать буфферный массив int buffer разыменовать его и присвоить нью инт
-	buffer[0] = value;				//2) добавить в массив буферный значение в нулевой элемент птм что front. Буфферный массив присвоить value (вэлью)
-	for (int i = 0; i < n; i++)		//3) копировать значения из исходного массива в буфферный через цикл for
+	int* buffer = new int[n + 1];   //1) РїСЂРёСЃРІРѕРёС‚СЊ Р±СѓС„С„РµСЂ new int n + 1, СЃРѕР·РґР°С‚СЊ Р±СѓС„С„РµСЂРЅС‹Р№ РјР°СЃСЃРёРІ int buffer СЂР°Р·С‹РјРµРЅРѕРІР°С‚СЊ РµРіРѕ Рё РїСЂРёСЃРІРѕРёС‚СЊ РЅСЊСЋ РёРЅС‚
+	buffer[0] = value;				//2) РґРѕР±Р°РІРёС‚СЊ РІ РјР°СЃСЃРёРІ Р±СѓС„РµСЂРЅС‹Р№ Р·РЅР°С‡РµРЅРёРµ РІ РЅСѓР»РµРІРѕР№ СЌР»РµРјРµРЅС‚ РїС‚Рј С‡С‚Рѕ front. Р‘СѓС„С„РµСЂРЅС‹Р№ РјР°СЃСЃРёРІ РїСЂРёСЃРІРѕРёС‚СЊ value (РІСЌР»СЊСЋ)
+	for (int i = 0; i < n; i++)		//3) РєРѕРїРёСЂРѕРІР°С‚СЊ Р·РЅР°С‡РµРЅРёСЏ РёР· РёСЃС…РѕРґРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІ Р±СѓС„С„РµСЂРЅС‹Р№ С‡РµСЂРµР· С†РёРєР» for
 	{
 		buffer[i + 1] = arr[i];
 	}
-	delete[] arr;					//4) удаляем старый массив
-	arr = buffer;					//5) подменить адрес старого массива адресом нового
+	delete[] arr;					//4) СѓРґР°Р»СЏРµРј СЃС‚Р°СЂС‹Р№ РјР°СЃСЃРёРІ
+	arr = buffer;					//5) РїРѕРґРјРµРЅРёС‚СЊ Р°РґСЂРµСЃ СЃС‚Р°СЂРѕРіРѕ РјР°СЃСЃРёРІР° Р°РґСЂРµСЃРѕРј РЅРѕРІРѕРіРѕ
 	n++;
 	return arr;
 }
@@ -177,7 +177,7 @@ int* insert(int* arr, int& n, int value, int index)
 	}
 	delete[] arr;
 	arr = buffer;
-	arr[index] = value;				//добавяем значение, само значение кладем в массив 
+	arr[index] = value;				//РґРѕР±Р°РІСЏРµРј Р·РЅР°С‡РµРЅРёРµ, СЃР°РјРѕ Р·РЅР°С‡РµРЅРёРµ РєР»Р°РґРµРј РІ РјР°СЃСЃРёРІ 
 	n++;
 	return arr;
 }
@@ -211,7 +211,7 @@ int* erase(int* arr, int& n, int value, int index)
 {
 	while (index < 0 || index >= n)
 	{
-		cout << "Введите индекс для удаления массива: "; cin >> index;
+		cout << "Р’РІРµРґРёС‚Рµ РёРЅРґРµРєСЃ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РјР°СЃСЃРёРІР°: "; cin >> index;
 	}
 	int* buffer = new int[n - 1];
 	for (int i = 0; i < index; i++)
