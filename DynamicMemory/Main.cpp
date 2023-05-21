@@ -17,10 +17,12 @@ int* insert(int* arr, int& n, int value, int index);			//вставляет зн
 
 int* pop_back(int* arr, int& n);
 int* pop_front(int* arr, int& n);
-int* erase(int* arr, int& n, int value, int index);						//удаляем элемент по индексу
+int* erase(int* arr, int& n, int value, int index);				//удаляем элемент по индексу
 
-#define DYNAMIC_MEMORY_1
-//#define DYNAMIC_MEMORY_2
+
+
+//#define DYNAMIC_MEMORY_1
+#define DYNAMIC_MEMORY_2
 
 
 void main()
@@ -72,6 +74,7 @@ void main()
 	cout << "Введите ко-во элементов строки: "; cin >> cols;
 
 	int** arr = new int* [rows];
+
 	for (int i = 0; i < rows; i++)
 	{
 		arr[i] = new int[cols];
@@ -214,14 +217,9 @@ int* erase(int* arr, int& n, int value, int index)
 		cout << "Введите индекс для удаления массива: "; cin >> index;
 	}
 	int* buffer = new int[n - 1];
-	for (int i = 0; i < index; i++)
-	{
-		buffer[i] = arr[i];
-	}
-	for (int i = index + 1; i < n; i++)
-	{
-		buffer[i - 1] = arr[i];
-	}
+	for (int i = 0; i < index; i++) buffer[i] = arr[i];
+
+	for (int i = index + 1; i < n; i++) buffer[i - 1] = arr[i];
 	delete[] arr;
 	n--;
 	return buffer;

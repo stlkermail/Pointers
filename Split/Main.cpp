@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 
 using namespace std;
 
@@ -14,7 +14,7 @@ void main()
 	Print(arr, n);
 
 
-	//вычисляем размеры массивов
+	//РІС‹С‡РёСЃР»СЏРµРј СЂР°Р·РјРµСЂС‹ РјР°СЃСЃРёРІРѕРІ
 	int even_count = 0;
 	int odd_count = 0;
 	for (int i = 0; i < n; i++)
@@ -22,10 +22,10 @@ void main()
 		if (arr[i] % 2 == 0) even_count++;
 		else odd_count++;
 	}
-	//выделяем память под массивы:
+	//РІС‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ РїРѕРґ РјР°СЃСЃРёРІС‹:
 	int* even_arr = new int[even_count];
 	int* odd_arr = new int[odd_count];
-	//копируем значение в сответствующие массивы: 
+	//РєРѕРїРёСЂСѓРµРј Р·РЅР°С‡РµРЅРёРµ РІ СЃРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёРµ РјР°СЃСЃРёРІС‹: 
 	for (int i = 0, j = 0, k = 0; i < n; i++)
 	{
 		if (arr[i] % 2 == 0) even_arr[j++] = arr[i];
